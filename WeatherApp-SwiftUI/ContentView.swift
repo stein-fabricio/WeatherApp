@@ -118,7 +118,7 @@ struct WeatherStatusView: View {
                 .font(.system(size: 70, weight: .medium))
                 .foregroundColor(.white)
         }
-        .padding(.all, 40)
+        .padding(.all, 35)
     }
 }
 
