@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isNight = false
+    
     var body: some View {
         ZStack {
-            BackgroundView(topColor: .blue, bottomColor: Color("lightBlue"))
+            BackgroundView(isNight: $isNight)
             VStack {
                 // order of the modifier matters
                 CityTextView(cityName: "Cupertino, CA")
                 
-                WeatherStatusView(imageName: "cloud.sun.fill",
+                WeatherStatusView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill",
                                   temperature: 76)
                 
                 HStack(spacing: 20) {
@@ -40,7 +43,8 @@ struct ContentView: View {
                 Spacer()
                 
                 Button {
-                    print("Button tapped")
+                    isNight.toggle()
+                    print("isNight: \(isNight)")
                 } label: {
                     WeatherButton(title: "Change Day Time",
                                   textColor: .blue,
@@ -82,10 +86,12 @@ struct WeatherDayView: View {
 
 struct BackgroundView: View {
     
-    var topColor: Color
-    var bottomColor: Color
+    @Binding var isNight: Bool
+//    var topColor: Color
+//    var bottomColor: Color
     var body: some View {
-        LinearGradient(colors: [topColor, bottomColor],
+        LinearGradient(colors: [isNight ? .black : .blue,
+                                isNight ? .gray : Color("lightBlue")],
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
         .edgesIgnoringSafeArea(.all)
@@ -99,7 +105,7 @@ struct CityTextView: View {
         Text(cityName)
             .font(.system(size: 32, weight: .medium, design: .default))
             .foregroundColor(.white)
-            .padding(.all, 20)
+            .padding(.all, 40)
     }
 }
 
@@ -118,7 +124,7 @@ struct WeatherStatusView: View {
                 .font(.system(size: 70, weight: .medium))
                 .foregroundColor(.white)
         }
-        .padding(.all, 35)
+        .padding(.bottom, 35)
     }
 }
 
