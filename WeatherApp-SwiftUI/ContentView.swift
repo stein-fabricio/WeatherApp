@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            BackgroundView(isNight: $isNight)
+            BackgroundView(isNight: isNight)
             VStack {
                 // order of the modifier matters
                 CityTextView(cityName: "Cupertino, CA")
@@ -86,7 +86,7 @@ struct WeatherDayView: View {
 
 struct BackgroundView: View {
     
-    @Binding var isNight: Bool
+    var isNight: Bool
 //    var topColor: Color
 //    var bottomColor: Color
     var body: some View {
@@ -94,7 +94,7 @@ struct BackgroundView: View {
                                 isNight ? .gray : Color("lightBlue")],
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
-        .edgesIgnoringSafeArea(.all)
+        .ignoresSafeArea()
     }
 }
 
