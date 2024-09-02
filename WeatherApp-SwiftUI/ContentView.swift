@@ -73,9 +73,13 @@ struct WeatherDayView: View {
                 .font(.system(size: 16, weight: .medium))
                 .foregroundColor(.white)
             Image(systemName: imageName)
-                .renderingMode(.original)
+                .symbolRenderingMode(.palette)//original: .multicolor)
+//                .renderingMode(.original)
                 .resizable() // stretches
+//                .foregroundColor(.red)
+                .foregroundStyle(.white, .orange, .red)
                 .aspectRatio(contentMode: .fit)
+            
                 .frame(width: 40, height: 40)
             Text("\(temperature)º")
                 .font(.system(size: 28, weight: .medium))
