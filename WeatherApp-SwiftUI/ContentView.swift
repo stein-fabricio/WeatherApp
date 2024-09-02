@@ -13,7 +13,9 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
+            // first layer
             BackgroundView(isNight: isNight)
+            // second layer
             VStack {
                 // order of the modifier matters
                 CityTextView(cityName: "Cupertino, CA")
@@ -54,6 +56,10 @@ struct ContentView: View {
                 Spacer() /// in one view, Xcode will let you only put 10 views. After that, Xcode
             }
         }
+        .onAppear {
+            // can put uikit code here
+            
+        }
     }
 }
 
@@ -73,13 +79,15 @@ struct WeatherDayView: View {
                 .font(.system(size: 16, weight: .medium))
                 .foregroundColor(.white)
             Image(systemName: imageName)
-                .symbolRenderingMode(.palette)//original: .multicolor)
-//                .renderingMode(.original)
+            ///iOS 15:
+                .symbolRenderingMode(.palette)
                 .resizable() // stretches
+//                  original: .multicolor)
+//                .renderingMode(.original)
 //                .foregroundColor(.red)
+            ///iOS 15:
                 .foregroundStyle(.white, .orange, .red)
                 .aspectRatio(contentMode: .fit)
-            
                 .frame(width: 40, height: 40)
             Text("\(temperature)º")
                 .font(.system(size: 28, weight: .medium))
@@ -94,11 +102,17 @@ struct BackgroundView: View {
 //    var topColor: Color
 //    var bottomColor: Color
     var body: some View {
+        /* customizable any iOS:
         LinearGradient(colors: [isNight ? .black : .blue,
                                 isNight ? .gray : Color("lightBlue")],
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
         .ignoresSafeArea()
+         */
+        /// iOS 16:
+        ContainerRelativeShape()
+            .fill(isNight ? Color.black.gradient : Color.blue.gradient)
+            .ignoresSafeArea()
     }
 }
 

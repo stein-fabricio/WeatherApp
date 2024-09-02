@@ -17,9 +17,15 @@ struct WeatherButton: View {
     var body: some View {
         Text(title)
             .frame(width: 280, height: 50)
-            .background(backgroundColor)
+        /// iOS 16:
+            .background(backgroundColor.gradient)
+//            .background(backgroundColor)
             .foregroundColor(textColor)
             .font(.system(size: 20, weight: .bold, design: .default))
             .cornerRadius(10.0)
     }
+}
+
+#Preview {
+    WeatherButton(title: "Test Title", textColor: Color.white, backgroundColor: .blue)
 }
