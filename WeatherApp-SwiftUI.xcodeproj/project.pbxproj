@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B403ABC72C8658270022D5A5 /* WeatherDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B403ABC62C8658270022D5A5 /* WeatherDayView.swift */; };
+		B403ABC92C8658A10022D5A5 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B403ABC82C8658A10022D5A5 /* BackgroundView.swift */; };
+		B403ABCB2C8658CE0022D5A5 /* CityTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B403ABCA2C8658CE0022D5A5 /* CityTextView.swift */; };
+		B403ABCD2C8659020022D5A5 /* WeatherStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B403ABCC2C8659020022D5A5 /* WeatherStatusView.swift */; };
 		B46C15082C7FA17A0027BDF1 /* WeatherApp_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C15072C7FA17A0027BDF1 /* WeatherApp_SwiftUIApp.swift */; };
 		B46C150A2C7FA17A0027BDF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C15092C7FA17A0027BDF1 /* ContentView.swift */; };
 		B46C150C2C7FA17E0027BDF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B46C150B2C7FA17E0027BDF1 /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B403ABC62C8658270022D5A5 /* WeatherDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDayView.swift; sourceTree = "<group>"; };
+		B403ABC82C8658A10022D5A5 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		B403ABCA2C8658CE0022D5A5 /* CityTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTextView.swift; sourceTree = "<group>"; };
+		B403ABCC2C8659020022D5A5 /* WeatherStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStatusView.swift; sourceTree = "<group>"; };
 		B46C15042C7FA17A0027BDF1 /* WeatherApp-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeatherApp-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B46C15072C7FA17A0027BDF1 /* WeatherApp_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp_SwiftUIApp.swift; sourceTree = "<group>"; };
 		B46C15092C7FA17A0027BDF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +81,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B403ABCE2C8659510022D5A5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B46C15312C7FB1870027BDF1 /* WeatherButton.swift */,
+				B403ABC82C8658A10022D5A5 /* BackgroundView.swift */,
+				B403ABC62C8658270022D5A5 /* WeatherDayView.swift */,
+				B403ABCC2C8659020022D5A5 /* WeatherStatusView.swift */,
+				B403ABCA2C8658CE0022D5A5 /* CityTextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B46C14FB2C7FA17A0027BDF1 = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +120,7 @@
 				B46C15092C7FA17A0027BDF1 /* ContentView.swift */,
 				B46C150B2C7FA17E0027BDF1 /* Assets.xcassets */,
 				B46C150D2C7FA17E0027BDF1 /* Preview Content */,
-				B46C15312C7FB1870027BDF1 /* WeatherButton.swift */,
+				B403ABCE2C8659510022D5A5 /* Views */,
 			);
 			path = "WeatherApp-SwiftUI";
 			sourceTree = "<group>";
@@ -260,8 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B403ABC92C8658A10022D5A5 /* BackgroundView.swift in Sources */,
+				B403ABC72C8658270022D5A5 /* WeatherDayView.swift in Sources */,
+				B403ABCB2C8658CE0022D5A5 /* CityTextView.swift in Sources */,
 				B46C150A2C7FA17A0027BDF1 /* ContentView.swift in Sources */,
 				B46C15082C7FA17A0027BDF1 /* WeatherApp_SwiftUIApp.swift in Sources */,
+				B403ABCD2C8659020022D5A5 /* WeatherStatusView.swift in Sources */,
 				B46C15322C7FB1870027BDF1 /* WeatherButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
